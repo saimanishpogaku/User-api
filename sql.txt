@@ -1,0 +1,23 @@
+CREATE TABLE Users (
+    Id varchar(255),
+    LastName varchar(255),
+    FirstName varchar(255),
+    Email varchar(255),
+    Mobile varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin12345';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+ALTER TABLE Users
+ADD Password varchar(255);
+
+ALTER TABLE Users
+ADD PRIMARY KEY (Id);
+
+ALTER TABLE Users RENAME COLUMN Address TO Country;
+
+50f292d9-dccf-46f5-8c37-91914133b909
